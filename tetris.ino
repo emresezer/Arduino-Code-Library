@@ -1,5 +1,22 @@
-// Tetris (Korobeiniki) Melody for Buzzer
-// Captain Emre Sezer - DUTlab Edition
+/*
+====================================================
+
+Gerekli Malzemeler:
+| Malzeme         | Adet | Açıklama           |
+|-----------------|------|--------------------|
+| Arduino Uno/Nano| 1    | Mikrodenetleyici   |
+| Piezo Buzzer    | 1    | Ses çıkışı         |
+| Jumper Kablo    | 2    | Bağlantı için      |
+| Breadboard      | 1    | Devre kurmak için  |
+
+🔌 Bağlantılar:
+| Buzzer Ucu     | Arduino Pini |
+|----------------|---------------|
+| + (Uzun bacak) | 8             |
+| - (Kısa bacak) | GND           |
+
+====================================================
+*/
 
 #define NOTE_B3  247
 #define NOTE_C4  262
@@ -29,16 +46,16 @@
 
 int buzzer = 8;
 
-// Melodi notaları (Tetris ana teması)
+// Tetris (Korobeiniki) ana tema melodisi
 int melody[] = {
-  E5, B4, C5, D5, C5, B4, A4,
-  A4, C5, E5, D5, C5, B4, C5,
-  D5, E5, C5, A4, A4, 0,
-  D5, F5, A5, G5, F5, E5, C5,
-  E5, D5, C5, B4, B4, 0
+  NOTE_E5, NOTE_B4, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_B4, NOTE_A4,
+  NOTE_A4, NOTE_C5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_B4, NOTE_C5,
+  NOTE_D5, NOTE_E5, NOTE_C5, NOTE_A4, NOTE_A4, 0,
+  NOTE_D5, NOTE_F5, NOTE_A5, NOTE_G5, NOTE_F5, NOTE_E5, NOTE_C5,
+  NOTE_E5, NOTE_D5, NOTE_C5, NOTE_B4, NOTE_B4, 0
 };
 
-// Her notanın süresi (4 = çeyrek nota, 8 = sekizlik nota vb.)
+// Nota süreleri (4 = çeyrek nota, 8 = sekizlik nota)
 int noteDurations[] = {
   8, 8, 8, 8, 8, 8, 4,
   8, 8, 4, 8, 8, 8, 8,
@@ -58,5 +75,5 @@ void setup() {
 }
 
 void loop() {
-  // Müzik sadece bir kez çalacak
+  // Müzik yalnızca bir kez çalacak.
 }
